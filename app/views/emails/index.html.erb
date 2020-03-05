@@ -1,41 +1,41 @@
 <br><br>
 <div class="container">
 	<div class="row">
-	<div class="col-6">
-	<table class="table table-hover">
-		  <thead>
-		    <tr>
-		    	<th scope="col">Id</th>
-		      <th scope="col">Object</th>
-		    </tr>
-		  </thead>
-		  <tbody>
-		  <% @emails.each do |email|%>
-		    <tr id="<%= email.id%>">
-		      <th scope="row"><%= email.id%></th>
-		      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-		      	<% if email.read == false %> 
-		      	<td style="font-weight: 900;">
-		      	<% else %>
-		      	<td>
-		      	<% end %>
-		      		<%= link_to email.object, email_path(email.id), remote: true %> 
-	
-		      	</td>
-		    	</div>
-		    	
-		    </tr>
-		  <% end %> 
-		  </tbody>
-	</table>
-	<%= button_to "Générer un email", {action: "create", method: "post"}, class: "btn btn-primary", remote: true %>
-</div>
-
-<div class="col-6">
-	<div id="show"></div>
-</div>
-
-</div>
+		<div class="col-6">
+			<table class="table table-hover">
+				  <thead>
+				    <tr>
+				    	<th scope="col">Id</th>
+				      <th scope="col">Object</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				  <% @emails.each do |email|%>
+				    <tr id="<%= email.id%>">
+				      <th scope="row">
+				      	<%= email.id%>	
+				      </th>
+				      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+				      	<% if email.read == false %> 
+				      		<td style="font-weight: 900;"> 
+				      			<%= link_to email.object, email_path(email.id), remote: true %> 
+				      		</td>
+				      	<% else %>
+				      		<td> 
+				      			<%= link_to email.object, email_path(email.id), remote: true %> 
+				      		</td> 
+				      	<% end %>
+				    	</div>
+				    </tr>
+				  <% end %> 
+				  </tbody>
+			</table>
+			<%= button_to "Générer un email", {action: "create", method: "post"}, class: "btn btn-primary", remote: true %>
+		</div>
+		<div class="col-6">
+			<div id="show"></div>
+		</div>
+	</div>
 </div>
 
 
