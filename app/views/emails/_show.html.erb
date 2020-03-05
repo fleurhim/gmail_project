@@ -1,0 +1,7 @@
+<div class="card" style="width: 40rem; height: 20rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%=email.object%></h5>
+    <p class="card-text"><%=email.body%></p>
+    <%= button_to "Supprimer", email, method: :delete, data:{confirm: "Es-tu sûr de le supprimer?"}, class:"btn btn-danger" %>
+  </div>
+</div>
